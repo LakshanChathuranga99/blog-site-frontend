@@ -1,0 +1,8 @@
+.links{
+    color: aliceblue;
+    font-size: larger;
+}
+
+.links:hover{
+    color: rgb(0, 195, 255);
+}

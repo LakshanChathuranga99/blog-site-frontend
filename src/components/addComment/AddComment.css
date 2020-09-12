@@ -1,0 +1,8 @@
+.errorMSG{
+    padding: 3px;
+    background-color: rgb(255, 205, 205);
+    border: 1px rgb(156, 7, 7) solid;
+    color: rgb(139, 23, 23);
+    font-size: small;
+    /* margin-bottom: 10px; */
+}
