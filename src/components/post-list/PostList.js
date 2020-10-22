@@ -10,7 +10,7 @@ import PostService from '../../services/post.service';
 
 const PostList = () => {
     
-    //------------- UnComment this sectio to get from db.js--------------
+    //------------- UnComment this section to get from db.js--------------
         const [state,setState] = useState(posts);
     //------------------------------------------------------------------
 

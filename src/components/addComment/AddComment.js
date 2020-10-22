@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Accordion, Card, Form, Col, Row } from 'react-bootstrap';
+import moment from 'moment';
 
 import './AddComment.css';
+import posts from "../../db";
+import { CommentService } from '../../services/comment.service';
 
 const AddComment = (props) => {
 
@@ -44,9 +47,27 @@ const AddComment = (props) => {
                 msg: ""
             });
             document.getElementById('btnToggle').click();
-            console.log(state);
-            console.log(props.postID);
+            //console.log(state);
+            //console.log(props.postID);
+
             
+            var now = moment(new Date()).format("DD/MM/YYYY HH:mm:ss");
+
+            let newComment = {
+                id: posts[props.postID].commentSection.length +1,
+                comment: state.comment,
+                type: state.commentType,
+                dateTime: now,
+                agree: 0,
+                disagree: 0,
+                replies: []
+            }
+
+            const commentPackage = {
+                postID: props.postID,
+                newComment : newComment
+            }
+            CommentService.addComment(commentPackage);
         }
 
     }
