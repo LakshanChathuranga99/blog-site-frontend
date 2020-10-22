@@ -4,6 +4,8 @@ import { Route } from 'react-router-dom';
 import PostList from '../post-list/PostList';
 import PostField from '../post/Post';
 import AddPost from '../addPost/AddPost';
+import SignUp from '../profile/SignUp';
+import SignIn from '../profile/SignIn';
 import './Form.css';
 
 const FormContainer = () => {
@@ -12,6 +14,8 @@ const FormContainer = () => {
                 <Route path="/" exact component={PostList} />
                 <Route path="/:id" exact component={PostField} />
                 <Route path="/posts/addPost" exact component={AddPost} />
+            <Route path="/profile/SignUp" exact component={SignUp} />
+            <Route path="/profile/SignIn" exact component={SignIn} />
 
         </div>
     );
