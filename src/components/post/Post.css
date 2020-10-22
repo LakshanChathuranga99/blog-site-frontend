@@ -94,4 +94,8 @@
     border-radius: 3px;
     border: 2px solid rgb(116, 116, 116);
   }
+
+  .clicked{
+    color:red
+  }
   

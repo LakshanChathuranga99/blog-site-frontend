@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 
 import './AddPost.css';
 import PostService from '../../services/post.service';
+import TimeStamp from '../../services/timestamp';
 
 const AddPost = () => {
 
@@ -12,7 +13,6 @@ const AddPost = () => {
         content: "",
         msg: ""
     });
-    const postService = PostService();
 
     const handleHeading = (event) => {
         setstate({
@@ -53,10 +53,14 @@ const AddPost = () => {
                 msg: "You need to add the content"
             });
         } else {
-            console.log(`Post Heading - ${state.heading} \nPost Type - ${state.type} \nPost Content - ${state.content} `);
+            const timestamp = TimeStamp();
+            var timestampStr = timestamp.getTimeStamp("04/09/2020 14:20:30");
+
+            console.log(`Post Heading - ${state.heading} \nPost Type - ${state.type} \nPost Content - ${state.content} \n${timestampStr}`);
 
             //----- unComment this section update data in the db--------------
-                postService.addPost({heading: state.heading, content: state.content});
+            //const postService = PostService();
+            //postService.addPost({heading: state.heading, content: state.content});
             //----------------------------------------------------
 
             setstate({
@@ -66,7 +70,7 @@ const AddPost = () => {
                 msg: ""
             });
         }
-        
+
     }
 
     return (
